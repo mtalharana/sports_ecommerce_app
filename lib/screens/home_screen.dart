@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sports_ecommerce_app/screens/menscreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -64,12 +65,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  Expanded(
-                    child: Container(
-                      color: Colors.red,
-                      child: Text('Talha'),
-                    ),
-                  ),
+                  MenScreen(),
                   Icon(Icons.directions_transit, size: 350),
                   Icon(Icons.directions_car, size: 350),
                 ],
