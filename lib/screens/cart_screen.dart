@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, sort_child_properties_last, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

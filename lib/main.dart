@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:sports_ecommerce_app/screens/cart_screen.dart';
 import 'package:sports_ecommerce_app/screens/home_screen.dart';
+import 'package:sports_ecommerce_app/screens/order_confirm.dart';
 import 'package:sports_ecommerce_app/screens/product_details.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CartScreens(),
+      home: OrderConfirmScreen(),
     );
   }
 }
