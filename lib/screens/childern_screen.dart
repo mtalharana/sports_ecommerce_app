@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, duplicate_import, avoid_unnecessary_containers, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'package:flutter/material.dart';
 
 final List<String> imgList = [
   'assets/images/image 18.png',
@@ -12,8 +10,8 @@ final List<String> imgList = [
   'assets/images/image 20.jpg',
 ];
 
-class MenScreen extends StatelessWidget {
-  const MenScreen({super.key});
+class ChildScreen extends StatelessWidget {
+  const ChildScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

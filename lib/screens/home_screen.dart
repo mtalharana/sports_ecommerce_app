@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sports_ecommerce_app/screens/childern_screen.dart';
 import 'package:sports_ecommerce_app/screens/menscreen.dart';
+import 'package:sports_ecommerce_app/screens/women_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,6 +29,14 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                       )),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 18, top: 20),
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
@@ -66,8 +76,8 @@ class HomeScreen extends StatelessWidget {
               child: TabBarView(
                 children: [
                   MenScreen(),
-                  Icon(Icons.directions_transit, size: 350),
-                  Icon(Icons.directions_car, size: 350),
+                  Women_Screen(),
+                  ChildScreen(),
                 ],
               ),
             ),
