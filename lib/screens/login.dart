@@ -5,7 +5,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sports_ecommerce_app/controllers/auth_controller.dart';
+import 'package:sports_ecommerce_app/screens/Signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,6 +18,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
@@ -36,6 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: TextFormField(
+                controller: emailController,
                 style: GoogleFonts.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -58,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: TextFormField(
+                controller: passwordController,
                 obscureText: true,
                 style: GoogleFonts.inter(
                     fontSize: 20,
@@ -91,7 +99,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 )
               ]),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  AuthController.instance
+                      .login(emailController.text, passwordController.text);
+                },
                 child: Text(
                   'Login',
                   style: GoogleFonts.inter(
@@ -118,7 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(SignupScreen());
+              },
               child: Text(
                 'Create an Account',
                 style: GoogleFonts.inter(

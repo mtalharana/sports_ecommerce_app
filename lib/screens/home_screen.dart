@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sports_ecommerce_app/screens/childern_screen.dart';
 import 'package:sports_ecommerce_app/screens/menscreen.dart';
 import 'package:sports_ecommerce_app/screens/women_screen.dart';
+import 'package:sports_ecommerce_app/controllers/auth_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,11 +32,16 @@ class HomeScreen extends StatelessWidget {
                       )),
                 ),
                 Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 18, top: 20),
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.black,
+                InkWell(
+                  onTap: () {
+                    AuthController.instance.signout();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 18, top: 20),
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],

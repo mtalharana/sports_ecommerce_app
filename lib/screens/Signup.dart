@@ -1,13 +1,18 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sports_ecommerce_app/controllers/auth_controller.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(
@@ -23,28 +28,7 @@ class SignupScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
-              style: GoogleFonts.inter(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white),
-              decoration: InputDecoration(
-                hintText: 'Username',
-                hintStyle: GoogleFonts.inter(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white, width: 3),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextFormField(
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
               style: GoogleFonts.inter(
                   fontSize: 20,
@@ -68,6 +52,7 @@ class SignupScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
+              controller: passwordController,
               keyboardType: TextInputType.text,
               obscureText: true,
               style: GoogleFonts.inter(
@@ -92,23 +77,32 @@ class SignupScreen extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Container(
-            height: 50,
-            width: 200,
-            decoration: BoxDecoration(color: Colors.black, boxShadow: [
-              BoxShadow(
-                color: Colors.white,
-                blurRadius: 20,
-              )
-            ]),
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Signup ',
-                style: GoogleFonts.inter(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white),
+          InkWell(
+            onTap: () {
+              Get.find<AuthController>()
+                  .register(emailController.text, passwordController.text);
+            },
+            child: Container(
+              height: 50,
+              width: 200,
+              decoration: BoxDecoration(color: Colors.black, boxShadow: [
+                BoxShadow(
+                  color: Colors.white,
+                  blurRadius: 20,
+                )
+              ]),
+              child: TextButton(
+                onPressed: () {
+                  AuthController.instance.register(
+                      emailController.text.trim(), passwordController.text);
+                },
+                child: Text(
+                  'Signup ',
+                  style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
               ),
             ),
           ),

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823143522214",
+    "project_id": "sportsecommerce-446a7",
+    "storage_bucket": "sportsecommerce-446a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823143522214:android:0fa41c84b5ed4a8579b967",
+        "android_client_info": {
+          "package_name": "com.example.sports_ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823143522214-hs1u6902d16pjlbs1p9bqjmk459ppeor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlBXHieELF2THvPFi9PHDNRfaz5BC3zqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823143522214-hs1u6902d16pjlbs1p9bqjmk459ppeor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

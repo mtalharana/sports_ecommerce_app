@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sports_ecommerce_app/screens/Signup.dart';
 import 'package:sports_ecommerce_app/screens/login.dart';
+import 'package:get/get.dart';
 
 class Screen2 extends StatelessWidget {
   const Screen2({super.key});
@@ -57,10 +58,7 @@ class Screen2 extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
+                        Get.to(() => LoginScreen());
                       },
                       child: Container(
                         height: 50,
@@ -79,10 +77,7 @@ class Screen2 extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignupScreen()));
+                        Get.to(() => SignupScreen());
                       },
                       child: Container(
                         height: 50,
