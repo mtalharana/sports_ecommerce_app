@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sports_ecommerce_app/screens/home_screen.dart';
-import 'package:sports_ecommerce_app/screens/login.dart';
 import 'package:sports_ecommerce_app/screens/splashscreen.dart';
 
 class AuthController extends GetxController {

@@ -1,10 +1,22 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, sort_child_properties_last
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, sort_child_properties_last, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, type_init_formals
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sports_ecommerce_app/screens/home_screen.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+  final String id;
+  final String title;
+  final String description;
+  final int price;
+  final String imageUrl;
+  ProductDetails(
+      {required this.id,
+      required this.title,
+      required this.price,
+      required this.description,
+      required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +29,14 @@ class ProductDetails extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 18),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios_new),
+                  InkWell(
+                      onTap: (() {
+                        Get.to(HomeScreen());
+                      }),
+                      child: Icon(Icons.arrow_back_ios_new)),
                   Spacer(),
                   Text(
-                    'Product Details',
+                    ('ProductDetails'),
                     style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -35,8 +51,8 @@ class ProductDetails extends StatelessWidget {
             Container(
               height: 300,
               width: 1000,
-              child: Image.asset(
-                'assets/images/image 18.png',
+              child: Image.network(
+                imageUrl,
                 fit: BoxFit.fill,
               ),
             ),
@@ -49,7 +65,7 @@ class ProductDetails extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Nike Air Max 270',
+                    title,
                     style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -58,7 +74,7 @@ class ProductDetails extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '\$ 120',
+                    price.toString(),
                     style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -90,7 +106,7 @@ class ProductDetails extends StatelessWidget {
                 right: 18,
               ),
               child: Text(
-                'Nikes first lifestyle Air Max brings you style, comfort and big attitude in the Nike Air Max 270. The design draws inspiration from Air Max icons, showcasing Nikes greatest innovation with its large window and fresh array of colours.',
+                description,
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.inter(
                   fontSize: 16,
