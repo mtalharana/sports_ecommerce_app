@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sports_ecommerce_app/models/products.dart';
+import 'package:sports_ecommerce_app/screens/cart_screen.dart';
 import 'package:sports_ecommerce_app/screens/home_screen.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -121,7 +123,15 @@ class ProductDetails extends StatelessWidget {
               padding: const EdgeInsets.only(
                   top: 10, left: 18, right: 18, bottom: 20),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(CartScreens(
+                      product: Product(
+                          id: id,
+                          title: title,
+                          description: description,
+                          price: price.toDouble(),
+                          imageUrl: imageUrl)));
+                },
                 child: Text(
                   'Add to Cart',
                   style: GoogleFonts.inter(

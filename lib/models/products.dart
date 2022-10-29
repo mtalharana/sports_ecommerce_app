@@ -24,4 +24,6 @@ class Product {
       imageUrl: data['imageUrl'],
     );
   }
+
+  void add(List<Product> cartProducts) {}
 }
